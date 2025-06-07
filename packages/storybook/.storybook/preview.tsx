@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#2E7D32', // Vantage Spaces green
+      main: '#2E7D32', // JudgeDice green
     },
     secondary: {
       main: '#1B5E20', // Darker green

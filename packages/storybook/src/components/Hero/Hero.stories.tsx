@@ -15,8 +15,8 @@ type Story = StoryObj<typeof Hero>;
 
 export const Default: Story = {
   args: {
-    title: "Use the power of planting to attract, engage and inspire.",
-    subtitle: "Planting the places where great teams thrive.",
+    title: "Welcome to JudgeDice",
+    subtitle: "Your digital dice rolling companion",
     ctaText: "GET STARTED",
     onCtaClick: () => console.log('CTA clicked'),
   },
@@ -24,8 +24,8 @@ export const Default: Story = {
 
 export const CustomContent: Story = {
   args: {
-    title: "Transform your workspace with biophilic design",
-    subtitle: "Creating environments where nature and productivity thrive together",
+    title: "Roll the dice, make your choice",
+    subtitle: "Experience the thrill of digital dice rolling",
     ctaText: "LEARN MORE",
     onCtaClick: () => console.log('Learn more clicked'),
   },
@@ -33,9 +33,9 @@ export const CustomContent: Story = {
 
 export const Minimal: Story = {
   args: {
-    title: "Welcome to Vantage Spaces",
-    subtitle: "Your partner in biophilic workspace design",
-    ctaText: "CONTACT US",
-    onCtaClick: () => console.log('Contact clicked'),
+    title: "JudgeDice",
+    subtitle: "Where chance meets choice",
+    ctaText: "PLAY NOW",
+    onCtaClick: () => console.log('Play clicked'),
   },
 }; 

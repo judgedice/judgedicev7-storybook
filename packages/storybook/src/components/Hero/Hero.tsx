@@ -25,8 +25,8 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({
-  title = "Use the power of planting to attract, engage and inspire.",
-  subtitle = "Planting the places where great teams thrive.",
+  title = "Welcome to JudgeDice",
+  subtitle = "Your digital dice rolling companion",
   ctaText = "GET STARTED",
   onCtaClick,
 }) => {
