@@ -1,10 +1,7 @@
 import type { StorybookConfig } from "@storybook/nextjs-vite";
 
 const config: StorybookConfig = {
-  "stories": [
-    "../src/**/*.mdx",
-    "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
-  ],
+  "stories": ["../src/stories/**/*.stories.@(ts|tsx|mdx)"],
   "addons": [
     "@storybook/addon-onboarding",
     "@chromatic-com/storybook",

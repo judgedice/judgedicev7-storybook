@@ -112,3 +112,17 @@ export const Playground: Story = {
     variant: 'default',
   },
 };
+
+export const docs: Story = {
+  args: {
+    title: "Card Component Documentation",
+    description: "This story is used to generate a docs page for the Card component.",
+    features: ["Documentation", "Usage", "Props", "Examples"],
+    ctaText: "Read Docs",
+    variant: "default"
+  },
+  parameters: {
+    docs: { page: () => <div>This is a docs page for the Card component.</div> }
+  },
+  tags: ["docsPage"]
+};

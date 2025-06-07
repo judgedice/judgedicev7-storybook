@@ -36,6 +36,7 @@ export const Heading1: Story = {
   args: {
     variant: 'h1',
     children: 'Heading 1 - The quick brown fox jumps over the lazy dog',
+    weight: "semibold"
   },
 };
 
