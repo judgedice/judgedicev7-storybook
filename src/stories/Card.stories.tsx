@@ -1,0 +1,114 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { Card } from './components/Card';
+
+const meta: Meta<typeof Card> = {
+  title: 'Components/Card',
+  component: Card,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['default', 'green', 'orange'],
+    },
+    onCtaClick: { action: 'clicked' },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
+  args: {
+    title: 'Biophilic Design',
+    description: 'Transform your space with nature-inspired design solutions that enhance wellbeing and productivity.',
+    features: [
+      'Living wall installations',
+      'Natural lighting integration',
+      'Sustainable materials',
+      'Air quality improvement',
+    ],
+    ctaText: 'Learn More',
+    variant: 'default',
+  },
+};
+
+export const Green: Story = {
+  args: {
+    title: 'Interior Landscaping',
+    description: 'Professional plant design and maintenance services to bring the outdoors inside your commercial space.',
+    features: [
+      'Custom plant selection',
+      'Maintenance programs',
+      'Seasonal updates',
+      'Health monitoring',
+    ],
+    ctaText: 'Get Started',
+    variant: 'green',
+  },
+};
+
+export const Orange: Story = {
+  args: {
+    title: 'Space Consultation',
+    description: 'Expert guidance to optimize your environment for maximum impact and aesthetic appeal.',
+    features: [
+      'Site assessment',
+      'Design recommendations',
+      'Budget planning',
+      'Implementation support',
+    ],
+    ctaText: 'Contact Us',
+    variant: 'orange',
+  },
+};
+
+export const WithCustomBackground: Story = {
+  args: {
+    title: 'Custom Design',
+    description: 'A card with a custom background image to showcase flexibility.',
+    features: [
+      'Custom styling',
+      'Flexible content',
+      'Responsive design',
+      'Easy integration',
+    ],
+    ctaText: 'Explore',
+    variant: 'default',
+    backgroundImage: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop',
+  },
+};
+
+export const LongContent: Story = {
+  args: {
+    title: 'Extended Features',
+    description: 'This card demonstrates how the component handles longer content and more features while maintaining good visual hierarchy.',
+    features: [
+      'Feature one with longer description',
+      'Another comprehensive feature',
+      'Advanced functionality included',
+      'Premium support available',
+      'Extended warranty options',
+      'Custom implementation',
+    ],
+    ctaText: 'View All Features',
+    variant: 'green',
+  },
+};
+
+export const Playground: Story = {
+  args: {
+    title: 'Playground Card',
+    description: 'Use the controls below to experiment with different props and see how the card responds.',
+    features: [
+      'Interactive controls',
+      'Real-time updates',
+      'Component testing',
+      'Visual feedback',
+    ],
+    ctaText: 'Try It Out',
+    variant: 'default',
+  },
+};
