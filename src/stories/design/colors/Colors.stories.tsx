@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Colors } from './components/Colors';
+import { Colors } from '../../components/Colors';
 
 const meta: Meta<typeof Colors> = {
   title: 'Design System/Colors',
@@ -78,23 +78,23 @@ export const WithCustomColors: Story = {
       },
     },
   },
-  play: async ({ canvasElement, step }) => {
+  play: async ({ step }) => {
     const root = document.documentElement;
     
-    await step('Initialize highlight colors', async () => {
+    await step('Initialize highlight colors', () => {
       root.style.setProperty('--vs-color-highlight', '#F6E05E');
       root.style.setProperty('--vs-color-highlight-light', '#FEFCBF');
       root.style.setProperty('--vs-color-highlight-dark', '#D69E2E');
     });
 
-    await step('Update brand colors', async () => {
+    await step('Update brand colors', () => {
       root.style.setProperty('--vs-color-primary', '#2C5282');
       root.style.setProperty('--vs-color-primary-dark', '#1A365D');
       root.style.setProperty('--vs-color-secondary', '#4A5568');
       root.style.setProperty('--vs-color-accent', '#48BB78');
     });
 
-    await step('Adjust text colors', async () => {
+    await step('Adjust text colors', () => {
       root.style.setProperty('--vs-color-text', '#1A202C');
       root.style.setProperty('--vs-color-text-light', '#4A5568');
       root.style.setProperty('--vs-color-text-lighter', '#718096');

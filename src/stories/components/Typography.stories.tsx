@@ -11,11 +11,11 @@ const meta: Meta<typeof Typography> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body', 'small', 'caption'],
+      options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle', 'body', 'small', 'caption'],
     },
     weight: {
       control: 'select',
-      options: ['normal', 'medium', 'semibold', 'bold'],
+      options: ['light', 'normal', 'medium', 'semibold', 'bold'],
     },
     color: {
       control: 'select',
@@ -29,7 +29,7 @@ const meta: Meta<typeof Typography> = {
 } satisfies Meta<typeof Typography>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Typography>;
 
 // Headings
 export const Heading1: Story = {
@@ -75,6 +75,13 @@ export const Heading6: Story = {
   },
 };
 
+export const Subtitle: Story = {
+  args: {
+    variant: 'subtitle',
+    children: 'Subtitle - The quick brown fox jumps over the lazy dog',
+  },
+};
+
 // Body text
 export const Body: Story = {
   args: {
@@ -98,6 +105,14 @@ export const Caption: Story = {
 };
 
 // Weights
+export const LightWeight: Story = {
+  args: {
+    variant: 'body',
+    weight: 'light',
+    children: 'Light weight text',
+  },
+};
+
 export const NormalWeight: Story = {
   args: {
     variant: 'body',

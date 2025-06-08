@@ -1,0 +1,50 @@
+name: Sync Storybook Dist to Site
+
+on:
+  push:
+    branches:
+      - main  # or your default branch name
+    paths:
+      - 'src/**'  # Only trigger on changes to source files
+      - 'package.json'
+      - 'tsconfig.json'
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Storybook repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Storybook library
+        run: yarn build:lib
+
+      - name: Checkout Site repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/judgedicev7-site
+          token: ${{ secrets.SITE_REPO_PAT }}
+          path: site-repo
+
+      - name: Copy dist folder
+        run: |
+          rm -rf site-repo/lib
+          cp -r dist site-repo/lib
+
+      - name: Commit and push to Site repo
+        run: |
+          cd site-repo
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add lib
+          git commit -m "chore: sync Storybook dist from ${{ github.repository }}@${{ github.sha }}" || exit 0
+          git push 
