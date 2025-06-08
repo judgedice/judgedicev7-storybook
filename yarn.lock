@@ -3558,6 +3558,18 @@ jsonfile@^6.1.0:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
+"judgedicev7@file:.":
+  version "0.1.0"
+  dependencies:
+    css-loader "^6.10.0"
+    judgedicev7 "file:../../Library/Caches/Yarn/v6/npm-judgedicev7-0.1.0-a4bb8cfe-408b-405f-87d8-66b8c92bf2e7-1749415126309/node_modules/judgedicev7-storybook"
+    next "15.3.3"
+    postcss "^8.4.35"
+    postcss-loader "^8.1.1"
+    react "^19.0.0"
+    react-dom "^19.0.0"
+    style-loader "^3.3.4"
+
 keyv@^4.5.4:
   version "4.5.4"
   resolved "https://registry.npmjs.org/keyv/-/keyv-4.5.4.tgz"
