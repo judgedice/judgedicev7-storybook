@@ -1,0 +1,41 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib-dist",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "declaration": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
+  },
+  "include": [
+    "src/stories/components/**/*.tsx",
+    "src/stories/components/**/*.ts",
+    "src/stories/molecules/**/*.tsx",
+    "src/stories/molecules/**/*.ts",
+    "src/stories/organisms/**/*.tsx",
+    "src/stories/organisms/**/*.ts",
+    "src/stories/atoms/**/*.tsx",
+    "src/stories/atoms/**/*.ts",
+    "src/index.ts",
+    "src/**/*.css"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib-dist",
+    "**/*.stories.tsx",
+    "**/*.stories.ts",
+    "**/*.test.tsx",
+    "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.spec.ts"
+  ]
+} 

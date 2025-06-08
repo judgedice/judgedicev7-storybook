@@ -3,6 +3,7 @@
 
 /* Import Gotham v2 - Note: This is a commercial font and needs to be properly licensed */
 /* You'll need to replace this with the actual font file import method used by Vantage Spaces */
+/*
 @font-face {
   font-family: 'Gotham v2';
   src: url('/fonts/Gotham-Light.woff2') format('woff2'),
@@ -20,6 +21,7 @@
   font-style: normal;
   font-display: swap;
 }
+*/
 
 /* Design tokens for typography */
 :root {

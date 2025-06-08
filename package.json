@@ -1,22 +1,35 @@
 {
   "name": "judgedicev7",
   "version": "0.1.0",
-  "private": true,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "private": false,
+  "type": "module",
+  "main": "lib-dist/index.js",
+  "types": "lib-dist/index.d.ts",
+  "files": [
+    "lib-dist"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "tsc && next build",
-    "build:lib": "tsc",
-    "start": "next start",
-    "lint": "next lint",
+    "build": "tsc",
+    "build:lib": "rm -rf lib-dist && tsc --project tsconfig.lib.json && mkdir -p lib-dist/stories && cp -r src/stories/**/*.css lib-dist/stories/",
+    "build:storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "test": "vitest",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "prepare": "yarn build:lib"
   },
   "dependencies": {
+    "judgedicev7": "file:../judgedicev7-storybook",
     "next": "15.3.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "style-loader": "^3.3.4",
+    "css-loader": "^6.10.0",
+    "postcss": "^8.4.35",
+    "postcss-loader": "^8.1.1"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.0.0",
@@ -41,6 +54,8 @@
     "storybook": "^9.0.6",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^3.2.2"
+    "tsc-alias": "^1.8.8",
+    "vitest": "^3.2.2",
+    "typescript-plugin-css-modules": "^5.0.1"
   }
 }
