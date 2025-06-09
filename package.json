@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "tsc",
-    "build:lib": "rm -rf lib-dist && tsc --project tsconfig.lib.json && mkdir -p lib-dist/stories && cp -r src/stories/**/*.css lib-dist/stories/",
+    "build:lib": "rm -rf lib-dist && tsc --project tsconfig.lib.json && rsync -a --exclude='*.stories.*' src/stories/ lib-dist/stories/",
     "build:storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "test": "vitest",

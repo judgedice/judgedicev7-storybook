@@ -4,8 +4,7 @@ const nextConfig = {
   output: undefined,
   // Don't use the default dist directory
   distDir: undefined,
-  // Disable page building
-  pageExtensions: [],
+
   images: {
     unoptimized: true,
   },
